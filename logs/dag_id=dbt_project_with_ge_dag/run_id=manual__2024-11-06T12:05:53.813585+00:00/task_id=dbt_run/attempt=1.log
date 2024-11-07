@@ -1,0 +1,51 @@
+[2024-11-06T12:06:57.043+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T12:06:57.079+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_run manual__2024-11-06T12:05:53.813585+00:00 [queued]>
+[2024-11-06T12:06:57.096+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_run manual__2024-11-06T12:05:53.813585+00:00 [queued]>
+[2024-11-06T12:06:57.097+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T12:06:57.126+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2024-11-06 12:05:53.813585+00:00
+[2024-11-06T12:06:57.136+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1957) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T12:06:57.138+0000] {standard_task_runner.py:72} INFO - Started process 1958 to run task
+[2024-11-06T12:06:57.141+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_with_ge_dag', 'dbt_run', 'manual__2024-11-06T12:05:53.813585+00:00', '--job-id', '170', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmpjelxiepx']
+[2024-11-06T12:06:57.143+0000] {standard_task_runner.py:105} INFO - Job 170: Subtask dbt_run
+[2024-11-06T12:06:57.220+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_with_ge_dag.dbt_run manual__2024-11-06T12:05:53.813585+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T12:06:57.349+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_with_ge_dag' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2024-11-06T12:05:53.813585+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-06T12:05:53.813585+00:00'
+[2024-11-06T12:06:57.350+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T12:06:57.380+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T12:06:57.381+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt run']
+[2024-11-06T12:06:57.419+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T12:07:00.568+0000] {subprocess.py:93} INFO - [0m12:07:00  Running with dbt=1.8.2
+[2024-11-06T12:07:00.998+0000] {subprocess.py:93} INFO - [0m12:07:00  Registered adapter: postgres=1.8.2
+[2024-11-06T12:07:01.808+0000] {subprocess.py:93} INFO - [0m12:07:01  Found 8 models, 15 seeds, 42 data tests, 541 macros
+[2024-11-06T12:07:01.814+0000] {subprocess.py:93} INFO - [0m12:07:01
+[2024-11-06T12:07:02.071+0000] {subprocess.py:93} INFO - [0m12:07:02  Concurrency: 12 threads (target='postgres')
+[2024-11-06T12:07:02.072+0000] {subprocess.py:93} INFO - [0m12:07:02
+[2024-11-06T12:07:02.089+0000] {subprocess.py:93} INFO - [0m12:07:02  1 of 8 START sql table model marts.dim_address ................................. [RUN]
+[2024-11-06T12:07:02.090+0000] {subprocess.py:93} INFO - [0m12:07:02  2 of 8 START sql table model marts.dim_credit_card ............................. [RUN]
+[2024-11-06T12:07:02.099+0000] {subprocess.py:93} INFO - [0m12:07:02  3 of 8 START sql table model marts.dim_customer ................................ [RUN]
+[2024-11-06T12:07:02.102+0000] {subprocess.py:93} INFO - [0m12:07:02  4 of 8 START sql table model marts.dim_date .................................... [RUN]
+[2024-11-06T12:07:02.104+0000] {subprocess.py:93} INFO - [0m12:07:02  5 of 8 START sql table model marts.dim_order_status ............................ [RUN]
+[2024-11-06T12:07:02.115+0000] {subprocess.py:93} INFO - [0m12:07:02  6 of 8 START sql table model marts.dim_product ................................. [RUN]
+[2024-11-06T12:07:02.121+0000] {subprocess.py:93} INFO - [0m12:07:02  7 of 8 START sql table model marts.fct_sales ................................... [RUN]
+[2024-11-06T12:07:02.808+0000] {subprocess.py:93} INFO - [0m12:07:02  2 of 8 OK created sql table model marts.dim_credit_card ........................ [[32mSELECT 1316[0m in 0.71s]
+[2024-11-06T12:07:02.811+0000] {subprocess.py:93} INFO - [0m12:07:02  1 of 8 OK created sql table model marts.dim_address ............................ [[32mSELECT 1675[0m in 0.70s]
+[2024-11-06T12:07:02.814+0000] {subprocess.py:93} INFO - [0m12:07:02  6 of 8 OK created sql table model marts.dim_product ............................ [[32mSELECT 504[0m in 0.66s]
+[2024-11-06T12:07:02.818+0000] {subprocess.py:93} INFO - [0m12:07:02  4 of 8 OK created sql table model marts.dim_date ............................... [[32mSELECT 731[0m in 0.66s]
+[2024-11-06T12:07:02.822+0000] {subprocess.py:93} INFO - [0m12:07:02  5 of 8 OK created sql table model marts.dim_order_status ....................... [[32mSELECT 1[0m in 0.66s]
+[2024-11-06T12:07:02.836+0000] {subprocess.py:93} INFO - [0m12:07:02  7 of 8 OK created sql table model marts.fct_sales .............................. [[32mSELECT 5675[0m in 0.68s]
+[2024-11-06T12:07:02.838+0000] {subprocess.py:93} INFO - [0m12:07:02  3 of 8 OK created sql table model marts.dim_customer ........................... [[32mSELECT 19820[0m in 0.71s]
+[2024-11-06T12:07:02.843+0000] {subprocess.py:93} INFO - [0m12:07:02  8 of 8 START sql table model marts.obt_sales ................................... [RUN]
+[2024-11-06T12:07:05.035+0000] {subprocess.py:93} INFO - [0m12:07:05  8 of 8 OK created sql table model marts.obt_sales .............................. [[32mSELECT 5675[0m in 2.19s]
+[2024-11-06T12:07:05.071+0000] {subprocess.py:93} INFO - [0m12:07:05
+[2024-11-06T12:07:05.073+0000] {subprocess.py:93} INFO - [0m12:07:05  Finished running 8 table models in 0 hours 0 minutes and 3.26 seconds (3.26s).
+[2024-11-06T12:07:05.190+0000] {subprocess.py:93} INFO - [0m12:07:05
+[2024-11-06T12:07:05.191+0000] {subprocess.py:93} INFO - [0m12:07:05  [32mCompleted successfully[0m
+[2024-11-06T12:07:05.193+0000] {subprocess.py:93} INFO - [0m12:07:05
+[2024-11-06T12:07:05.193+0000] {subprocess.py:93} INFO - [0m12:07:05  Done. PASS=8 WARN=0 ERROR=0 SKIP=0 TOTAL=8
+[2024-11-06T12:07:06.622+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T12:07:06.651+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T12:07:06.652+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_with_ge_dag, task_id=dbt_run, run_id=manual__2024-11-06T12:05:53.813585+00:00, execution_date=20241106T120553, start_date=20241106T120657, end_date=20241106T120706
+[2024-11-06T12:07:06.700+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T12:07:06.729+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T12:07:06.731+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

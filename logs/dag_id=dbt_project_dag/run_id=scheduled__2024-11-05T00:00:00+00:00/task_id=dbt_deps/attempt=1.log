@@ -1,0 +1,60 @@
+[2024-11-06T10:00:30.893+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T10:00:30.926+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_dag.dbt_deps scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T10:00:30.945+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_dag.dbt_deps scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T10:00:30.946+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T10:00:31.057+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_deps> on 2024-11-05 00:00:00+00:00
+[2024-11-06T10:00:31.074+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=68) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T10:00:31.079+0000] {standard_task_runner.py:72} INFO - Started process 71 to run task
+[2024-11-06T10:00:31.081+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_dag', 'dbt_deps', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '150', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmprvl8wkss']
+[2024-11-06T10:00:31.083+0000] {standard_task_runner.py:105} INFO - Job 150: Subtask dbt_deps
+[2024-11-06T10:00:31.159+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_dag.dbt_deps scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T10:00:31.420+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_dag' AIRFLOW_CTX_TASK_ID='dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T10:00:31.421+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T10:00:31.467+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T10:00:31.469+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt deps']
+[2024-11-06T10:00:31.494+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T10:00:40.169+0000] {subprocess.py:93} INFO - [0m10:00:40  Running with dbt=1.8.2
+[2024-11-06T10:00:41.453+0000] {subprocess.py:93} INFO - [0m10:00:41  Installing dbt-labs/dbt_utils
+[2024-11-06T10:00:42.089+0000] {subprocess.py:93} INFO - [0m10:00:42  Installed from version 1.0.0
+[2024-11-06T10:00:42.090+0000] {subprocess.py:93} INFO - [0m10:00:42  Updated version available: 1.3.0
+[2024-11-06T10:00:42.096+0000] {subprocess.py:93} INFO - [0m10:00:42
+[2024-11-06T10:00:42.107+0000] {subprocess.py:93} INFO - [0m10:00:42  Updates available for packages: ['dbt-labs/dbt_utils']
+[2024-11-06T10:00:42.111+0000] {subprocess.py:93} INFO - Update your versions in packages.yml, then run dbt deps
+[2024-11-06T10:00:43.664+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T10:00:43.738+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T10:00:43.739+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_dag, task_id=dbt_deps, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T100030, end_date=20241106T100043
+[2024-11-06T10:00:43.826+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T10:00:43.904+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T10:00:44.057+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-11-06T13:10:32.065+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T13:10:32.084+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_dag.dbt_deps scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T13:10:32.095+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_dag.dbt_deps scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T13:10:32.096+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T13:10:32.110+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_deps> on 2024-11-05 00:00:00+00:00
+[2024-11-06T13:10:32.117+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3308) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T13:10:32.118+0000] {standard_task_runner.py:72} INFO - Started process 3309 to run task
+[2024-11-06T13:10:32.119+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_dag', 'dbt_deps', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '202', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmp2hiw0q6g']
+[2024-11-06T13:10:32.120+0000] {standard_task_runner.py:105} INFO - Job 202: Subtask dbt_deps
+[2024-11-06T13:10:32.168+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_dag.dbt_deps scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T13:10:32.263+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_dag' AIRFLOW_CTX_TASK_ID='dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T13:10:32.264+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T13:10:32.289+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T13:10:32.290+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt deps']
+[2024-11-06T13:10:32.304+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T13:10:36.750+0000] {subprocess.py:93} INFO - [0m13:10:36  Running with dbt=1.8.2
+[2024-11-06T13:11:15.659+0000] {subprocess.py:93} INFO - [0m13:11:15  Installing dbt-labs/dbt_utils
+[2024-11-06T13:11:41.883+0000] {subprocess.py:93} INFO - [0m13:11:41  Installed from version 1.0.0
+[2024-11-06T13:11:41.884+0000] {subprocess.py:93} INFO - [0m13:11:41  Updated version available: 1.3.0
+[2024-11-06T13:11:41.886+0000] {subprocess.py:93} INFO - [0m13:11:41
+[2024-11-06T13:11:41.886+0000] {subprocess.py:93} INFO - [0m13:11:41  Updates available for packages: ['dbt-labs/dbt_utils']
+[2024-11-06T13:11:41.887+0000] {subprocess.py:93} INFO - Update your versions in packages.yml, then run dbt deps
+[2024-11-06T13:11:52.327+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T13:11:52.358+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T13:11:52.358+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_dag, task_id=dbt_deps, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T131032, end_date=20241106T131152
+[2024-11-06T13:11:52.408+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T13:11:52.440+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T13:11:52.442+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

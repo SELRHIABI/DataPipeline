@@ -1,0 +1,31 @@
+[2024-11-06T12:45:17.498+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T12:45:17.529+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_docs_generate scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:45:17.542+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_docs_generate scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:45:17.543+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T12:45:17.558+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_docs_generate> on 2024-11-05 00:00:00+00:00
+[2024-11-06T12:45:17.564+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2981) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T12:45:17.566+0000] {standard_task_runner.py:72} INFO - Started process 2982 to run task
+[2024-11-06T12:45:17.567+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_with_ge_dag', 'dbt_docs_generate', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '201', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmpvi6xexsf']
+[2024-11-06T12:45:17.569+0000] {standard_task_runner.py:105} INFO - Job 201: Subtask dbt_docs_generate
+[2024-11-06T12:45:17.630+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_with_ge_dag.dbt_docs_generate scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T12:45:17.762+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_with_ge_dag' AIRFLOW_CTX_TASK_ID='dbt_docs_generate' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T12:45:17.763+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T12:45:17.791+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T12:45:17.792+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt docs generate']
+[2024-11-06T12:45:17.806+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T12:45:22.508+0000] {subprocess.py:93} INFO - [0m12:45:22  Running with dbt=1.8.2
+[2024-11-06T12:45:22.996+0000] {subprocess.py:93} INFO - [0m12:45:22  Registered adapter: postgres=1.8.2
+[2024-11-06T12:45:23.709+0000] {subprocess.py:93} INFO - [0m12:45:23  Found 8 models, 15 seeds, 42 data tests, 541 macros
+[2024-11-06T12:45:23.722+0000] {subprocess.py:93} INFO - [0m12:45:23
+[2024-11-06T12:45:24.197+0000] {subprocess.py:93} INFO - [0m12:45:24  Concurrency: 12 threads (target='postgres')
+[2024-11-06T12:45:24.199+0000] {subprocess.py:93} INFO - [0m12:45:24
+[2024-11-06T12:45:25.840+0000] {subprocess.py:93} INFO - [0m12:45:25  Building catalog
+[2024-11-06T12:45:26.242+0000] {subprocess.py:93} INFO - [0m12:45:26  Catalog written to /opt/dbt/target/catalog.json
+[2024-11-06T12:45:27.937+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T12:45:27.972+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T12:45:27.972+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_with_ge_dag, task_id=dbt_docs_generate, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T124517, end_date=20241106T124527
+[2024-11-06T12:45:28.022+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T12:45:28.056+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T12:45:28.059+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

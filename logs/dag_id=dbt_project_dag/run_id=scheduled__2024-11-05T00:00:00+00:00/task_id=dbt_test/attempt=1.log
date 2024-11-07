@@ -1,0 +1,238 @@
+[2024-11-06T10:01:56.601+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T10:01:56.642+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_dag.dbt_test scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T10:01:56.676+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_dag.dbt_test scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T10:01:56.680+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T10:01:56.712+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_test> on 2024-11-05 00:00:00+00:00
+[2024-11-06T10:01:56.726+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=155) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T10:01:56.729+0000] {standard_task_runner.py:72} INFO - Started process 156 to run task
+[2024-11-06T10:01:56.730+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_dag', 'dbt_test', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '153', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmpr9e6j53w']
+[2024-11-06T10:01:56.732+0000] {standard_task_runner.py:105} INFO - Job 153: Subtask dbt_test
+[2024-11-06T10:01:56.839+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_dag.dbt_test scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T10:01:57.061+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_dag' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T10:01:57.063+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T10:01:57.104+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T10:01:57.106+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt test ']
+[2024-11-06T10:01:57.131+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T10:02:04.246+0000] {subprocess.py:93} INFO - [0m10:02:04  Running with dbt=1.8.2
+[2024-11-06T10:02:05.696+0000] {subprocess.py:93} INFO - [0m10:02:05  Registered adapter: postgres=1.8.2
+[2024-11-06T10:02:08.174+0000] {subprocess.py:93} INFO - [0m10:02:08  Found 8 models, 15 seeds, 42 data tests, 541 macros
+[2024-11-06T10:02:08.207+0000] {subprocess.py:93} INFO - [0m10:02:08
+[2024-11-06T10:02:09.142+0000] {subprocess.py:93} INFO - [0m10:02:09  Concurrency: 12 threads (target='postgres')
+[2024-11-06T10:02:09.145+0000] {subprocess.py:93} INFO - [0m10:02:09
+[2024-11-06T10:02:09.228+0000] {subprocess.py:93} INFO - [0m10:02:09  1 of 42 START test not_null_dim_address_address_key ............................ [RUN]
+[2024-11-06T10:02:09.241+0000] {subprocess.py:93} INFO - [0m10:02:09  4 of 42 START test not_null_dim_credit_card_creditcard_key ..................... [RUN]
+[2024-11-06T10:02:09.255+0000] {subprocess.py:93} INFO - [0m10:02:09  3 of 42 START test not_null_dim_credit_card_cardtype ........................... [RUN]
+[2024-11-06T10:02:09.262+0000] {subprocess.py:93} INFO - [0m10:02:09  2 of 42 START test not_null_dim_address_addressid .............................. [RUN]
+[2024-11-06T10:02:09.267+0000] {subprocess.py:93} INFO - [0m10:02:09  8 of 42 START test not_null_dim_date_date_day .................................. [RUN]
+[2024-11-06T10:02:09.271+0000] {subprocess.py:93} INFO - [0m10:02:09  7 of 42 START test not_null_dim_customer_customerid ............................ [RUN]
+[2024-11-06T10:02:09.276+0000] {subprocess.py:93} INFO - [0m10:02:09  5 of 42 START test not_null_dim_credit_card_creditcardid ....................... [RUN]
+[2024-11-06T10:02:09.388+0000] {subprocess.py:93} INFO - [0m10:02:09  11 of 42 START test not_null_dim_order_status_order_status_key ................. [RUN]
+[2024-11-06T10:02:09.425+0000] {subprocess.py:93} INFO - [0m10:02:09  6 of 42 START test not_null_dim_customer_customer_key .......................... [RUN]
+[2024-11-06T10:02:09.448+0000] {subprocess.py:93} INFO - [0m10:02:09  10 of 42 START test not_null_dim_order_status_order_status ..................... [RUN]
+[2024-11-06T10:02:09.458+0000] {subprocess.py:93} INFO - [0m10:02:09  9 of 42 START test not_null_dim_date_date_key .................................. [RUN]
+[2024-11-06T10:02:09.467+0000] {subprocess.py:93} INFO - [0m10:02:09  12 of 42 START test not_null_dim_product_product_key ........................... [RUN]
+[2024-11-06T10:02:10.162+0000] {subprocess.py:93} INFO - [0m10:02:10  7 of 42 PASS not_null_dim_customer_customerid .................................. [[32mPASS[0m in 0.88s]
+[2024-11-06T10:02:10.177+0000] {subprocess.py:93} INFO - [0m10:02:10  12 of 42 PASS not_null_dim_product_product_key ................................. [[32mPASS[0m in 0.57s]
+[2024-11-06T10:02:10.181+0000] {subprocess.py:93} INFO - [0m10:02:10  2 of 42 PASS not_null_dim_address_addressid .................................... [[32mPASS[0m in 0.89s]
+[2024-11-06T10:02:10.212+0000] {subprocess.py:93} INFO - [0m10:02:10  1 of 42 PASS not_null_dim_address_address_key .................................. [[32mPASS[0m in 0.96s]
+[2024-11-06T10:02:10.235+0000] {subprocess.py:93} INFO - [0m10:02:10  10 of 42 PASS not_null_dim_order_status_order_status ........................... [[32mPASS[0m in 0.72s]
+[2024-11-06T10:02:10.240+0000] {subprocess.py:93} INFO - [0m10:02:10  14 of 42 START test not_null_dim_product_productid ............................. [RUN]
+[2024-11-06T10:02:10.243+0000] {subprocess.py:93} INFO - [0m10:02:10  5 of 42 PASS not_null_dim_credit_card_creditcardid ............................. [[32mPASS[0m in 0.96s]
+[2024-11-06T10:02:10.254+0000] {subprocess.py:93} INFO - [0m10:02:10  11 of 42 PASS not_null_dim_order_status_order_status_key ....................... [[32mPASS[0m in 0.80s]
+[2024-11-06T10:02:10.279+0000] {subprocess.py:93} INFO - [0m10:02:10  13 of 42 START test not_null_dim_product_product_name .......................... [RUN]
+[2024-11-06T10:02:10.284+0000] {subprocess.py:93} INFO - [0m10:02:10  15 of 42 START test not_null_fct_sales_customer_key ............................ [RUN]
+[2024-11-06T10:02:10.289+0000] {subprocess.py:93} INFO - [0m10:02:10  16 of 42 START test not_null_fct_sales_order_date_key .......................... [RUN]
+[2024-11-06T10:02:10.296+0000] {subprocess.py:93} INFO - [0m10:02:10  17 of 42 START test not_null_fct_sales_order_status_key ........................ [RUN]
+[2024-11-06T10:02:10.338+0000] {subprocess.py:93} INFO - [0m10:02:10  3 of 42 PASS not_null_dim_credit_card_cardtype ................................. [[32mPASS[0m in 1.02s]
+[2024-11-06T10:02:10.359+0000] {subprocess.py:93} INFO - [0m10:02:10  8 of 42 PASS not_null_dim_date_date_day ........................................ [[32mPASS[0m in 1.04s]
+[2024-11-06T10:02:10.367+0000] {subprocess.py:93} INFO - [0m10:02:10  18 of 42 START test not_null_fct_sales_orderqty ................................ [RUN]
+[2024-11-06T10:02:10.618+0000] {subprocess.py:93} INFO - [0m10:02:10  6 of 42 PASS not_null_dim_customer_customer_key ................................ [[32mPASS[0m in 1.18s]
+[2024-11-06T10:02:10.630+0000] {subprocess.py:93} INFO - [0m10:02:10  9 of 42 PASS not_null_dim_date_date_key ........................................ [[32mPASS[0m in 1.09s]
+[2024-11-06T10:02:10.669+0000] {subprocess.py:93} INFO - [0m10:02:10  19 of 42 START test not_null_fct_sales_product_key ............................. [RUN]
+[2024-11-06T10:02:10.670+0000] {subprocess.py:93} INFO - [0m10:02:10  4 of 42 PASS not_null_dim_credit_card_creditcard_key ........................... [[32mPASS[0m in 1.31s]
+[2024-11-06T10:02:10.725+0000] {subprocess.py:93} INFO - [0m10:02:10  20 of 42 START test not_null_fct_sales_sales_key ............................... [RUN]
+[2024-11-06T10:02:10.741+0000] {subprocess.py:93} INFO - [0m10:02:10  21 of 42 START test not_null_fct_sales_salesorderdetailid ...................... [RUN]
+[2024-11-06T10:02:10.768+0000] {subprocess.py:93} INFO - [0m10:02:10  22 of 42 START test not_null_fct_sales_salesorderid ............................ [RUN]
+[2024-11-06T10:02:10.798+0000] {subprocess.py:93} INFO - [0m10:02:10  24 of 42 START test not_null_fct_sales_unitprice ............................... [RUN]
+[2024-11-06T10:02:10.815+0000] {subprocess.py:93} INFO - [0m10:02:10  23 of 42 START test not_null_fct_sales_ship_address_key ........................ [RUN]
+[2024-11-06T10:02:11.391+0000] {subprocess.py:93} INFO - [0m10:02:11  13 of 42 PASS not_null_dim_product_product_name ................................ [[32mPASS[0m in 1.10s]
+[2024-11-06T10:02:11.470+0000] {subprocess.py:93} INFO - [0m10:02:11  16 of 42 PASS not_null_fct_sales_order_date_key ................................ [[32mPASS[0m in 1.06s]
+[2024-11-06T10:02:11.516+0000] {subprocess.py:93} INFO - [0m10:02:11  15 of 42 PASS not_null_fct_sales_customer_key .................................. [[32mPASS[0m in 1.22s]
+[2024-11-06T10:02:11.537+0000] {subprocess.py:93} INFO - [0m10:02:11  25 of 42 START test not_null_obt_sales_orderqty ................................ [RUN]
+[2024-11-06T10:02:11.540+0000] {subprocess.py:93} INFO - [0m10:02:11  14 of 42 PASS not_null_dim_product_productid ................................... [[32mPASS[0m in 1.22s]
+[2024-11-06T10:02:11.541+0000] {subprocess.py:93} INFO - [0m10:02:11  26 of 42 START test not_null_obt_sales_sales_key ............................... [RUN]
+[2024-11-06T10:02:11.548+0000] {subprocess.py:93} INFO - [0m10:02:11  17 of 42 PASS not_null_fct_sales_order_status_key .............................. [[32mPASS[0m in 1.15s]
+[2024-11-06T10:02:11.575+0000] {subprocess.py:93} INFO - [0m10:02:11  21 of 42 PASS not_null_fct_sales_salesorderdetailid ............................ [[32mPASS[0m in 0.82s]
+[2024-11-06T10:02:11.581+0000] {subprocess.py:93} INFO - [0m10:02:11  24 of 42 PASS not_null_fct_sales_unitprice ..................................... [[32mPASS[0m in 0.71s]
+[2024-11-06T10:02:11.593+0000] {subprocess.py:93} INFO - [0m10:02:11  27 of 42 START test not_null_obt_sales_salesorderdetailid ...................... [RUN]
+[2024-11-06T10:02:11.596+0000] {subprocess.py:93} INFO - [0m10:02:11  28 of 42 START test not_null_obt_sales_salesorderid ............................ [RUN]
+[2024-11-06T10:02:11.612+0000] {subprocess.py:93} INFO - [0m10:02:11  18 of 42 PASS not_null_fct_sales_orderqty ...................................... [[32mPASS[0m in 1.23s]
+[2024-11-06T10:02:11.617+0000] {subprocess.py:93} INFO - [0m10:02:11  20 of 42 PASS not_null_fct_sales_sales_key ..................................... [[32mPASS[0m in 0.81s]
+[2024-11-06T10:02:11.647+0000] {subprocess.py:93} INFO - [0m10:02:11  29 of 42 START test not_null_obt_sales_unitprice ............................... [RUN]
+[2024-11-06T10:02:11.651+0000] {subprocess.py:93} INFO - [0m10:02:11  22 of 42 PASS not_null_fct_sales_salesorderid .................................. [[32mPASS[0m in 0.84s]
+[2024-11-06T10:02:11.685+0000] {subprocess.py:93} INFO - [0m10:02:11  31 of 42 START test unique_dim_address_addressid ............................... [RUN]
+[2024-11-06T10:02:11.696+0000] {subprocess.py:93} INFO - [0m10:02:11  30 of 42 START test unique_dim_address_address_key ............................. [RUN]
+[2024-11-06T10:02:11.701+0000] {subprocess.py:93} INFO - [0m10:02:11  32 of 42 START test unique_dim_credit_card_creditcardid ........................ [RUN]
+[2024-11-06T10:02:11.727+0000] {subprocess.py:93} INFO - [0m10:02:11  33 of 42 START test unique_dim_customer_customer_key ........................... [RUN]
+[2024-11-06T10:02:11.846+0000] {subprocess.py:93} INFO - [0m10:02:11  34 of 42 START test unique_dim_customer_customerid ............................. [RUN]
+[2024-11-06T10:02:11.875+0000] {subprocess.py:93} INFO - [0m10:02:11  23 of 42 PASS not_null_fct_sales_ship_address_key .............................. [[32mPASS[0m in 0.93s]
+[2024-11-06T10:02:11.898+0000] {subprocess.py:93} INFO - [0m10:02:11  19 of 42 PASS not_null_fct_sales_product_key ................................... [[32mPASS[0m in 1.12s]
+[2024-11-06T10:02:12.146+0000] {subprocess.py:93} INFO - [0m10:02:12  35 of 42 START test unique_dim_date_date_day ................................... [RUN]
+[2024-11-06T10:02:12.168+0000] {subprocess.py:93} INFO - [0m10:02:12  36 of 42 START test unique_dim_date_date_key ................................... [RUN]
+[2024-11-06T10:02:12.231+0000] {subprocess.py:93} INFO - [0m10:02:12  31 of 42 PASS unique_dim_address_addressid ..................................... [[32mPASS[0m in 0.53s]
+[2024-11-06T10:02:12.266+0000] {subprocess.py:93} INFO - [0m10:02:12  28 of 42 PASS not_null_obt_sales_salesorderid .................................. [[32mPASS[0m in 0.63s]
+[2024-11-06T10:02:12.349+0000] {subprocess.py:93} INFO - [0m10:02:12  26 of 42 PASS not_null_obt_sales_sales_key ..................................... [[32mPASS[0m in 0.80s]
+[2024-11-06T10:02:12.365+0000] {subprocess.py:93} INFO - [0m10:02:12  25 of 42 PASS not_null_obt_sales_orderqty ...................................... [[32mPASS[0m in 0.82s]
+[2024-11-06T10:02:12.405+0000] {subprocess.py:93} INFO - [0m10:02:12  37 of 42 START test unique_dim_order_status_order_status ....................... [RUN]
+[2024-11-06T10:02:12.423+0000] {subprocess.py:93} INFO - [0m10:02:12  38 of 42 START test unique_dim_order_status_order_status_key ................... [RUN]
+[2024-11-06T10:02:12.442+0000] {subprocess.py:93} INFO - [0m10:02:12  39 of 42 START test unique_dim_product_product_key ............................. [RUN]
+[2024-11-06T10:02:12.525+0000] {subprocess.py:93} INFO - [0m10:02:12  32 of 42 PASS unique_dim_credit_card_creditcardid .............................. [[32mPASS[0m in 0.74s]
+[2024-11-06T10:02:12.568+0000] {subprocess.py:93} INFO - [0m10:02:12  27 of 42 PASS not_null_obt_sales_salesorderdetailid ............................ [[32mPASS[0m in 0.95s]
+[2024-11-06T10:02:12.574+0000] {subprocess.py:93} INFO - [0m10:02:12  33 of 42 PASS unique_dim_customer_customer_key ................................. [[32mPASS[0m in 0.76s]
+[2024-11-06T10:02:12.583+0000] {subprocess.py:93} INFO - [0m10:02:12  41 of 42 START test unique_fct_sales_sales_key ................................. [RUN]
+[2024-11-06T10:02:12.600+0000] {subprocess.py:93} INFO - [0m10:02:12  40 of 42 START test unique_dim_product_productid ............................... [RUN]
+[2024-11-06T10:02:12.602+0000] {subprocess.py:93} INFO - [0m10:02:12  34 of 42 PASS unique_dim_customer_customerid ................................... [[32mPASS[0m in 0.74s]
+[2024-11-06T10:02:12.637+0000] {subprocess.py:93} INFO - [0m10:02:12  29 of 42 PASS not_null_obt_sales_unitprice ..................................... [[32mPASS[0m in 0.95s]
+[2024-11-06T10:02:12.644+0000] {subprocess.py:93} INFO - [0m10:02:12  30 of 42 PASS unique_dim_address_address_key ................................... [[32mPASS[0m in 0.94s]
+[2024-11-06T10:02:12.681+0000] {subprocess.py:93} INFO - [0m10:02:12  42 of 42 START test unique_obt_sales_sales_key ................................. [RUN]
+[2024-11-06T10:02:12.733+0000] {subprocess.py:93} INFO - [0m10:02:12  36 of 42 PASS unique_dim_date_date_key ......................................... [[32mPASS[0m in 0.54s]
+[2024-11-06T10:02:12.841+0000] {subprocess.py:93} INFO - [0m10:02:12  35 of 42 PASS unique_dim_date_date_day ......................................... [[32mPASS[0m in 0.62s]
+[2024-11-06T10:02:12.902+0000] {subprocess.py:93} INFO - [0m10:02:12  39 of 42 PASS unique_dim_product_product_key ................................... [[32mPASS[0m in 0.44s]
+[2024-11-06T10:02:12.907+0000] {subprocess.py:93} INFO - [0m10:02:12  38 of 42 PASS unique_dim_order_status_order_status_key ......................... [[32mPASS[0m in 0.46s]
+[2024-11-06T10:02:13.010+0000] {subprocess.py:93} INFO - [0m10:02:13  37 of 42 PASS unique_dim_order_status_order_status ............................. [[32mPASS[0m in 0.56s]
+[2024-11-06T10:02:13.050+0000] {subprocess.py:93} INFO - [0m10:02:13  42 of 42 PASS unique_obt_sales_sales_key ....................................... [[32mPASS[0m in 0.31s]
+[2024-11-06T10:02:13.066+0000] {subprocess.py:93} INFO - [0m10:02:13  40 of 42 PASS unique_dim_product_productid ..................................... [[32mPASS[0m in 0.43s]
+[2024-11-06T10:02:13.080+0000] {subprocess.py:93} INFO - [0m10:02:13  41 of 42 PASS unique_fct_sales_sales_key ....................................... [[32mPASS[0m in 0.45s]
+[2024-11-06T10:02:13.137+0000] {subprocess.py:93} INFO - [0m10:02:13
+[2024-11-06T10:02:13.138+0000] {subprocess.py:93} INFO - [0m10:02:13  Finished running 42 data tests in 0 hours 0 minutes and 4.94 seconds (4.94s).
+[2024-11-06T10:02:13.307+0000] {subprocess.py:93} INFO - [0m10:02:13
+[2024-11-06T10:02:13.309+0000] {subprocess.py:93} INFO - [0m10:02:13  [32mCompleted successfully[0m
+[2024-11-06T10:02:13.312+0000] {subprocess.py:93} INFO - [0m10:02:13
+[2024-11-06T10:02:13.317+0000] {subprocess.py:93} INFO - [0m10:02:13  Done. PASS=42 WARN=0 ERROR=0 SKIP=0 TOTAL=42
+[2024-11-06T10:02:14.560+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T10:02:14.669+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T10:02:14.671+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_dag, task_id=dbt_test, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T100156, end_date=20241106T100214
+[2024-11-06T10:02:14.769+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T10:02:14.860+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T10:02:14.865+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-11-06T13:12:57.556+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T13:12:57.577+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_dag.dbt_test scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T13:12:57.590+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_dag.dbt_test scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T13:12:57.591+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T13:12:57.606+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_test> on 2024-11-05 00:00:00+00:00
+[2024-11-06T13:12:57.611+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3397) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T13:12:57.613+0000] {standard_task_runner.py:72} INFO - Started process 3398 to run task
+[2024-11-06T13:12:57.613+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_dag', 'dbt_test', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '205', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmp1y29sje3']
+[2024-11-06T13:12:57.614+0000] {standard_task_runner.py:105} INFO - Job 205: Subtask dbt_test
+[2024-11-06T13:12:57.666+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_dag.dbt_test scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T13:12:57.760+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_dag' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T13:12:57.761+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T13:12:57.780+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T13:12:57.781+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt test']
+[2024-11-06T13:12:57.793+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T13:13:01.053+0000] {subprocess.py:93} INFO - [0m13:13:01  Running with dbt=1.8.2
+[2024-11-06T13:13:01.469+0000] {subprocess.py:93} INFO - [0m13:13:01  Registered adapter: postgres=1.8.2
+[2024-11-06T13:13:02.038+0000] {subprocess.py:93} INFO - [0m13:13:02  Found 8 models, 15 seeds, 42 data tests, 541 macros
+[2024-11-06T13:13:02.050+0000] {subprocess.py:93} INFO - [0m13:13:02
+[2024-11-06T13:13:02.263+0000] {subprocess.py:93} INFO - [0m13:13:02  Concurrency: 12 threads (target='postgres')
+[2024-11-06T13:13:02.265+0000] {subprocess.py:93} INFO - [0m13:13:02
+[2024-11-06T13:13:02.292+0000] {subprocess.py:93} INFO - [0m13:13:02  1 of 42 START test not_null_dim_address_address_key ............................ [RUN]
+[2024-11-06T13:13:02.299+0000] {subprocess.py:93} INFO - [0m13:13:02  2 of 42 START test not_null_dim_address_addressid .............................. [RUN]
+[2024-11-06T13:13:02.305+0000] {subprocess.py:93} INFO - [0m13:13:02  3 of 42 START test not_null_dim_credit_card_cardtype ........................... [RUN]
+[2024-11-06T13:13:02.308+0000] {subprocess.py:93} INFO - [0m13:13:02  4 of 42 START test not_null_dim_credit_card_creditcard_key ..................... [RUN]
+[2024-11-06T13:13:02.309+0000] {subprocess.py:93} INFO - [0m13:13:02  5 of 42 START test not_null_dim_credit_card_creditcardid ....................... [RUN]
+[2024-11-06T13:13:02.309+0000] {subprocess.py:93} INFO - [0m13:13:02  6 of 42 START test not_null_dim_customer_customer_key .......................... [RUN]
+[2024-11-06T13:13:02.310+0000] {subprocess.py:93} INFO - [0m13:13:02  7 of 42 START test not_null_dim_customer_customerid ............................ [RUN]
+[2024-11-06T13:13:02.323+0000] {subprocess.py:93} INFO - [0m13:13:02  8 of 42 START test not_null_dim_date_date_day .................................. [RUN]
+[2024-11-06T13:13:02.323+0000] {subprocess.py:93} INFO - [0m13:13:02  9 of 42 START test not_null_dim_date_date_key .................................. [RUN]
+[2024-11-06T13:13:02.338+0000] {subprocess.py:93} INFO - [0m13:13:02  10 of 42 START test not_null_dim_order_status_order_status ..................... [RUN]
+[2024-11-06T13:13:02.339+0000] {subprocess.py:93} INFO - [0m13:13:02  11 of 42 START test not_null_dim_order_status_order_status_key ................. [RUN]
+[2024-11-06T13:13:02.340+0000] {subprocess.py:93} INFO - [0m13:13:02  12 of 42 START test not_null_dim_product_product_key ........................... [RUN]
+[2024-11-06T13:13:02.658+0000] {subprocess.py:93} INFO - [0m13:13:02  1 of 42 PASS not_null_dim_address_address_key .................................. [[32mPASS[0m in 0.36s]
+[2024-11-06T13:13:02.706+0000] {subprocess.py:93} INFO - [0m13:13:02  5 of 42 PASS not_null_dim_credit_card_creditcardid ............................. [[32mPASS[0m in 0.36s]
+[2024-11-06T13:13:02.712+0000] {subprocess.py:93} INFO - [0m13:13:02  4 of 42 PASS not_null_dim_credit_card_creditcard_key ........................... [[32mPASS[0m in 0.37s]
+[2024-11-06T13:13:02.715+0000] {subprocess.py:93} INFO - [0m13:13:02  2 of 42 PASS not_null_dim_address_addressid .................................... [[32mPASS[0m in 0.40s]
+[2024-11-06T13:13:02.717+0000] {subprocess.py:93} INFO - [0m13:13:02  6 of 42 PASS not_null_dim_customer_customer_key ................................ [[32mPASS[0m in 0.37s]
+[2024-11-06T13:13:02.719+0000] {subprocess.py:93} INFO - [0m13:13:02  13 of 42 START test not_null_dim_product_product_name .......................... [RUN]
+[2024-11-06T13:13:02.721+0000] {subprocess.py:93} INFO - [0m13:13:02  8 of 42 PASS not_null_dim_date_date_day ........................................ [[32mPASS[0m in 0.38s]
+[2024-11-06T13:13:02.723+0000] {subprocess.py:93} INFO - [0m13:13:02  7 of 42 PASS not_null_dim_customer_customerid .................................. [[32mPASS[0m in 0.38s]
+[2024-11-06T13:13:02.725+0000] {subprocess.py:93} INFO - [0m13:13:02  9 of 42 PASS not_null_dim_date_date_key ........................................ [[32mPASS[0m in 0.38s]
+[2024-11-06T13:13:02.727+0000] {subprocess.py:93} INFO - [0m13:13:02  11 of 42 PASS not_null_dim_order_status_order_status_key ....................... [[32mPASS[0m in 0.38s]
+[2024-11-06T13:13:02.732+0000] {subprocess.py:93} INFO - [0m13:13:02  3 of 42 PASS not_null_dim_credit_card_cardtype ................................. [[32mPASS[0m in 0.39s]
+[2024-11-06T13:13:02.736+0000] {subprocess.py:93} INFO - [0m13:13:02  10 of 42 PASS not_null_dim_order_status_order_status ........................... [[32mPASS[0m in 0.39s]
+[2024-11-06T13:13:02.743+0000] {subprocess.py:93} INFO - [0m13:13:02  12 of 42 PASS not_null_dim_product_product_key ................................. [[32mPASS[0m in 0.39s]
+[2024-11-06T13:13:02.748+0000] {subprocess.py:93} INFO - [0m13:13:02  14 of 42 START test not_null_dim_product_productid ............................. [RUN]
+[2024-11-06T13:13:02.753+0000] {subprocess.py:93} INFO - [0m13:13:02  15 of 42 START test not_null_fct_sales_customer_key ............................ [RUN]
+[2024-11-06T13:13:02.753+0000] {subprocess.py:93} INFO - [0m13:13:02  16 of 42 START test not_null_fct_sales_order_date_key .......................... [RUN]
+[2024-11-06T13:13:02.755+0000] {subprocess.py:93} INFO - [0m13:13:02  17 of 42 START test not_null_fct_sales_order_status_key ........................ [RUN]
+[2024-11-06T13:13:02.756+0000] {subprocess.py:93} INFO - [0m13:13:02  18 of 42 START test not_null_fct_sales_orderqty ................................ [RUN]
+[2024-11-06T13:13:02.766+0000] {subprocess.py:93} INFO - [0m13:13:02  19 of 42 START test not_null_fct_sales_product_key ............................. [RUN]
+[2024-11-06T13:13:02.767+0000] {subprocess.py:93} INFO - [0m13:13:02  20 of 42 START test not_null_fct_sales_sales_key ............................... [RUN]
+[2024-11-06T13:13:02.767+0000] {subprocess.py:93} INFO - [0m13:13:02  21 of 42 START test not_null_fct_sales_salesorderdetailid ...................... [RUN]
+[2024-11-06T13:13:02.770+0000] {subprocess.py:93} INFO - [0m13:13:02  22 of 42 START test not_null_fct_sales_salesorderid ............................ [RUN]
+[2024-11-06T13:13:02.773+0000] {subprocess.py:93} INFO - [0m13:13:02  23 of 42 START test not_null_fct_sales_ship_address_key ........................ [RUN]
+[2024-11-06T13:13:02.779+0000] {subprocess.py:93} INFO - [0m13:13:02  24 of 42 START test not_null_fct_sales_unitprice ............................... [RUN]
+[2024-11-06T13:13:03.059+0000] {subprocess.py:93} INFO - [0m13:13:03  14 of 42 PASS not_null_dim_product_productid ................................... [[32mPASS[0m in 0.30s]
+[2024-11-06T13:13:03.079+0000] {subprocess.py:93} INFO - [0m13:13:03  13 of 42 PASS not_null_dim_product_product_name ................................ [[32mPASS[0m in 0.34s]
+[2024-11-06T13:13:03.113+0000] {subprocess.py:93} INFO - [0m13:13:03  20 of 42 PASS not_null_fct_sales_sales_key ..................................... [[32mPASS[0m in 0.34s]
+[2024-11-06T13:13:03.115+0000] {subprocess.py:93} INFO - [0m13:13:03  25 of 42 START test not_null_obt_sales_orderqty ................................ [RUN]
+[2024-11-06T13:13:03.118+0000] {subprocess.py:93} INFO - [0m13:13:03  16 of 42 PASS not_null_fct_sales_order_date_key ................................ [[32mPASS[0m in 0.35s]
+[2024-11-06T13:13:03.119+0000] {subprocess.py:93} INFO - [0m13:13:03  17 of 42 PASS not_null_fct_sales_order_status_key .............................. [[32mPASS[0m in 0.35s]
+[2024-11-06T13:13:03.124+0000] {subprocess.py:93} INFO - [0m13:13:03  15 of 42 PASS not_null_fct_sales_customer_key .................................. [[32mPASS[0m in 0.36s]
+[2024-11-06T13:13:03.129+0000] {subprocess.py:93} INFO - [0m13:13:03  19 of 42 PASS not_null_fct_sales_product_key ................................... [[32mPASS[0m in 0.35s]
+[2024-11-06T13:13:03.132+0000] {subprocess.py:93} INFO - [0m13:13:03  18 of 42 PASS not_null_fct_sales_orderqty ...................................... [[32mPASS[0m in 0.36s]
+[2024-11-06T13:13:03.135+0000] {subprocess.py:93} INFO - [0m13:13:03  22 of 42 PASS not_null_fct_sales_salesorderid .................................. [[32mPASS[0m in 0.35s]
+[2024-11-06T13:13:03.137+0000] {subprocess.py:93} INFO - [0m13:13:03  23 of 42 PASS not_null_fct_sales_ship_address_key .............................. [[32mPASS[0m in 0.35s]
+[2024-11-06T13:13:03.138+0000] {subprocess.py:93} INFO - [0m13:13:03  21 of 42 PASS not_null_fct_sales_salesorderdetailid ............................ [[32mPASS[0m in 0.36s]
+[2024-11-06T13:13:03.142+0000] {subprocess.py:93} INFO - [0m13:13:03  24 of 42 PASS not_null_fct_sales_unitprice ..................................... [[32mPASS[0m in 0.33s]
+[2024-11-06T13:13:03.145+0000] {subprocess.py:93} INFO - [0m13:13:03  26 of 42 START test not_null_obt_sales_sales_key ............................... [RUN]
+[2024-11-06T13:13:03.157+0000] {subprocess.py:93} INFO - [0m13:13:03  27 of 42 START test not_null_obt_sales_salesorderdetailid ...................... [RUN]
+[2024-11-06T13:13:03.164+0000] {subprocess.py:93} INFO - [0m13:13:03  28 of 42 START test not_null_obt_sales_salesorderid ............................ [RUN]
+[2024-11-06T13:13:03.166+0000] {subprocess.py:93} INFO - [0m13:13:03  29 of 42 START test not_null_obt_sales_unitprice ............................... [RUN]
+[2024-11-06T13:13:03.171+0000] {subprocess.py:93} INFO - [0m13:13:03  30 of 42 START test unique_dim_address_address_key ............................. [RUN]
+[2024-11-06T13:13:03.173+0000] {subprocess.py:93} INFO - [0m13:13:03  31 of 42 START test unique_dim_address_addressid ............................... [RUN]
+[2024-11-06T13:13:03.174+0000] {subprocess.py:93} INFO - [0m13:13:03  32 of 42 START test unique_dim_credit_card_creditcardid ........................ [RUN]
+[2024-11-06T13:13:03.183+0000] {subprocess.py:93} INFO - [0m13:13:03  33 of 42 START test unique_dim_customer_customer_key ........................... [RUN]
+[2024-11-06T13:13:03.184+0000] {subprocess.py:93} INFO - [0m13:13:03  34 of 42 START test unique_dim_customer_customerid ............................. [RUN]
+[2024-11-06T13:13:03.185+0000] {subprocess.py:93} INFO - [0m13:13:03  35 of 42 START test unique_dim_date_date_day ................................... [RUN]
+[2024-11-06T13:13:03.186+0000] {subprocess.py:93} INFO - [0m13:13:03  36 of 42 START test unique_dim_date_date_key ................................... [RUN]
+[2024-11-06T13:13:03.438+0000] {subprocess.py:93} INFO - [0m13:13:03  25 of 42 PASS not_null_obt_sales_orderqty ...................................... [[32mPASS[0m in 0.31s]
+[2024-11-06T13:13:03.483+0000] {subprocess.py:93} INFO - [0m13:13:03  26 of 42 PASS not_null_obt_sales_sales_key ..................................... [[32mPASS[0m in 0.32s]
+[2024-11-06T13:13:03.485+0000] {subprocess.py:93} INFO - [0m13:13:03  37 of 42 START test unique_dim_order_status_order_status ....................... [RUN]
+[2024-11-06T13:13:03.498+0000] {subprocess.py:93} INFO - [0m13:13:03  30 of 42 PASS unique_dim_address_address_key ................................... [[32mPASS[0m in 0.31s]
+[2024-11-06T13:13:03.504+0000] {subprocess.py:93} INFO - [0m13:13:03  27 of 42 PASS not_null_obt_sales_salesorderdetailid ............................ [[32mPASS[0m in 0.33s]
+[2024-11-06T13:13:03.509+0000] {subprocess.py:93} INFO - [0m13:13:03  35 of 42 PASS unique_dim_date_date_day ......................................... [[32mPASS[0m in 0.29s]
+[2024-11-06T13:13:03.513+0000] {subprocess.py:93} INFO - [0m13:13:03  28 of 42 PASS not_null_obt_sales_salesorderid .................................. [[32mPASS[0m in 0.34s]
+[2024-11-06T13:13:03.517+0000] {subprocess.py:93} INFO - [0m13:13:03  29 of 42 PASS not_null_obt_sales_unitprice ..................................... [[32mPASS[0m in 0.34s]
+[2024-11-06T13:13:03.527+0000] {subprocess.py:93} INFO - [0m13:13:03  32 of 42 PASS unique_dim_credit_card_creditcardid .............................. [[32mPASS[0m in 0.33s]
+[2024-11-06T13:13:03.529+0000] {subprocess.py:93} INFO - [0m13:13:03  31 of 42 PASS unique_dim_address_addressid ..................................... [[32mPASS[0m in 0.33s]
+[2024-11-06T13:13:03.533+0000] {subprocess.py:93} INFO - [0m13:13:03  33 of 42 PASS unique_dim_customer_customer_key ................................. [[32mPASS[0m in 0.33s]
+[2024-11-06T13:13:03.534+0000] {subprocess.py:93} INFO - [0m13:13:03  38 of 42 START test unique_dim_order_status_order_status_key ................... [RUN]
+[2024-11-06T13:13:03.545+0000] {subprocess.py:93} INFO - [0m13:13:03  36 of 42 PASS unique_dim_date_date_key ......................................... [[32mPASS[0m in 0.33s]
+[2024-11-06T13:13:03.549+0000] {subprocess.py:93} INFO - [0m13:13:03  39 of 42 START test unique_dim_product_product_key ............................. [RUN]
+[2024-11-06T13:13:03.552+0000] {subprocess.py:93} INFO - [0m13:13:03  40 of 42 START test unique_dim_product_productid ............................... [RUN]
+[2024-11-06T13:13:03.553+0000] {subprocess.py:93} INFO - [0m13:13:03  41 of 42 START test unique_fct_sales_sales_key ................................. [RUN]
+[2024-11-06T13:13:03.555+0000] {subprocess.py:93} INFO - [0m13:13:03  34 of 42 PASS unique_dim_customer_customerid ................................... [[32mPASS[0m in 0.35s]
+[2024-11-06T13:13:03.556+0000] {subprocess.py:93} INFO - [0m13:13:03  42 of 42 START test unique_obt_sales_sales_key ................................. [RUN]
+[2024-11-06T13:13:03.662+0000] {subprocess.py:93} INFO - [0m13:13:03  37 of 42 PASS unique_dim_order_status_order_status ............................. [[32mPASS[0m in 0.16s]
+[2024-11-06T13:13:03.687+0000] {subprocess.py:93} INFO - [0m13:13:03  38 of 42 PASS unique_dim_order_status_order_status_key ......................... [[32mPASS[0m in 0.14s]
+[2024-11-06T13:13:03.692+0000] {subprocess.py:93} INFO - [0m13:13:03  41 of 42 PASS unique_fct_sales_sales_key ....................................... [[32mPASS[0m in 0.13s]
+[2024-11-06T13:13:03.699+0000] {subprocess.py:93} INFO - [0m13:13:03  39 of 42 PASS unique_dim_product_product_key ................................... [[32mPASS[0m in 0.14s]
+[2024-11-06T13:13:03.707+0000] {subprocess.py:93} INFO - [0m13:13:03  42 of 42 PASS unique_obt_sales_sales_key ....................................... [[32mPASS[0m in 0.14s]
+[2024-11-06T13:13:03.712+0000] {subprocess.py:93} INFO - [0m13:13:03  40 of 42 PASS unique_dim_product_productid ..................................... [[32mPASS[0m in 0.15s]
+[2024-11-06T13:13:03.771+0000] {subprocess.py:93} INFO - [0m13:13:03
+[2024-11-06T13:13:03.772+0000] {subprocess.py:93} INFO - [0m13:13:03  Finished running 42 data tests in 0 hours 0 minutes and 1.72 seconds (1.72s).
+[2024-11-06T13:13:03.878+0000] {subprocess.py:93} INFO - [0m13:13:03
+[2024-11-06T13:13:03.880+0000] {subprocess.py:93} INFO - [0m13:13:03  [32mCompleted successfully[0m
+[2024-11-06T13:13:03.881+0000] {subprocess.py:93} INFO - [0m13:13:03
+[2024-11-06T13:13:03.882+0000] {subprocess.py:93} INFO - [0m13:13:03  Done. PASS=42 WARN=0 ERROR=0 SKIP=0 TOTAL=42
+[2024-11-06T13:13:05.185+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T13:13:05.222+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T13:13:05.223+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_dag, task_id=dbt_test, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T131257, end_date=20241106T131305
+[2024-11-06T13:13:05.269+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T13:13:05.298+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T13:13:05.300+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

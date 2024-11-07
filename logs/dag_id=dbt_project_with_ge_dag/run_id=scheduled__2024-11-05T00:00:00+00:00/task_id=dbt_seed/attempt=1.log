@@ -1,0 +1,260 @@
+[2024-11-06T12:02:24.609+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T12:02:24.637+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:02:24.650+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:02:24.651+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T12:02:24.672+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_seed> on 2024-11-05 00:00:00+00:00
+[2024-11-06T12:02:24.680+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1777) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T12:02:24.682+0000] {standard_task_runner.py:72} INFO - Started process 1778 to run task
+[2024-11-06T12:02:24.682+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_with_ge_dag', 'dbt_seed', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '163', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmpj7_wuocb']
+[2024-11-06T12:02:24.683+0000] {standard_task_runner.py:105} INFO - Job 163: Subtask dbt_seed
+[2024-11-06T12:02:24.739+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T12:02:24.845+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_with_ge_dag' AIRFLOW_CTX_TASK_ID='dbt_seed' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T12:02:24.847+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T12:02:24.870+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T12:02:24.871+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt seed']
+[2024-11-06T12:02:24.882+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T12:02:28.326+0000] {subprocess.py:93} INFO - [0m12:02:28  Running with dbt=1.8.2
+[2024-11-06T12:02:28.727+0000] {subprocess.py:93} INFO - [0m12:02:28  Registered adapter: postgres=1.8.2
+[2024-11-06T12:02:29.355+0000] {subprocess.py:93} INFO - [0m12:02:29  Found 8 models, 15 seeds, 42 data tests, 541 macros
+[2024-11-06T12:02:29.360+0000] {subprocess.py:93} INFO - [0m12:02:29
+[2024-11-06T12:02:29.610+0000] {subprocess.py:93} INFO - [0m12:02:29  Concurrency: 12 threads (target='postgres')
+[2024-11-06T12:02:29.611+0000] {subprocess.py:93} INFO - [0m12:02:29
+[2024-11-06T12:02:29.626+0000] {subprocess.py:93} INFO - [0m12:02:29  1 of 15 START seed file person.address ......................................... [RUN]
+[2024-11-06T12:02:29.628+0000] {subprocess.py:93} INFO - [0m12:02:29  2 of 15 START seed file person.countryregion ................................... [RUN]
+[2024-11-06T12:02:29.631+0000] {subprocess.py:93} INFO - [0m12:02:29  3 of 15 START seed file sales.creditcard ....................................... [RUN]
+[2024-11-06T12:02:29.636+0000] {subprocess.py:93} INFO - [0m12:02:29  4 of 15 START seed file sales.customer ......................................... [RUN]
+[2024-11-06T12:02:29.637+0000] {subprocess.py:93} INFO - [0m12:02:29  5 of 15 START seed file date.date .............................................. [RUN]
+[2024-11-06T12:02:29.638+0000] {subprocess.py:93} INFO - [0m12:02:29  6 of 15 START seed file person.person .......................................... [RUN]
+[2024-11-06T12:02:29.638+0000] {subprocess.py:93} INFO - [0m12:02:29  7 of 15 START seed file production.product ..................................... [RUN]
+[2024-11-06T12:02:29.640+0000] {subprocess.py:93} INFO - [0m12:02:29  8 of 15 START seed file production.productcategory ............................. [RUN]
+[2024-11-06T12:02:29.642+0000] {subprocess.py:93} INFO - [0m12:02:29  9 of 15 START seed file production.productsubcategory .......................... [RUN]
+[2024-11-06T12:02:29.643+0000] {subprocess.py:93} INFO - [0m12:02:29  10 of 15 START seed file sales.salesorderdetail ................................ [RUN]
+[2024-11-06T12:02:29.644+0000] {subprocess.py:93} INFO - [0m12:02:29  11 of 15 START seed file sales.salesorderheader ................................ [RUN]
+[2024-11-06T12:02:29.645+0000] {subprocess.py:93} INFO - [0m12:02:29  12 of 15 START seed file sales.salesorderheadersalesreason ..................... [RUN]
+[2024-11-06T12:02:38.948+0000] {subprocess.py:93} INFO - [0m12:02:38  2 of 15 OK loaded seed file person.countryregion ............................... [[32mINSERT 238[0m in 8.56s]
+[2024-11-06T12:02:39.920+0000] {subprocess.py:93} INFO - [0m12:02:39  8 of 15 OK loaded seed file production.productcategory ......................... [[32mINSERT 4[0m in 9.62s]
+[2024-11-06T12:02:40.738+0000] {subprocess.py:93} INFO - [0m12:02:40  9 of 15 OK loaded seed file production.productsubcategory ...................... [[32mINSERT 37[0m in 10.47s]
+[2024-11-06T12:02:40.840+0000] {subprocess.py:93} INFO - [0m12:02:40  13 of 15 START seed file sales.salesreason ..................................... [RUN]
+[2024-11-06T12:02:41.372+0000] {subprocess.py:93} INFO - [0m12:02:41  14 of 15 START seed file person.stateprovince .................................. [RUN]
+[2024-11-06T12:02:41.726+0000] {subprocess.py:93} INFO - [0m12:02:41  5 of 15 OK loaded seed file date.date .......................................... [[32mINSERT 731[0m in 11.82s]
+[2024-11-06T12:02:41.802+0000] {subprocess.py:93} INFO - [0m12:02:41  15 of 15 START seed file sales.store ........................................... [RUN]
+[2024-11-06T12:02:42.742+0000] {subprocess.py:93} INFO - [0m12:02:42  12 of 15 OK loaded seed file sales.salesorderheadersalesreason ................. [[32mINSERT 1710[0m in 12.60s]
+[2024-11-06T12:02:45.641+0000] {subprocess.py:93} INFO - [0m12:02:45  7 of 15 OK loaded seed file production.product ................................. [[32mINSERT 504[0m in 15.28s]
+[2024-11-06T12:02:48.833+0000] {subprocess.py:93} INFO - [0m12:02:48  1 of 15 OK loaded seed file person.address ..................................... [[32mINSERT 1675[0m in 19.19s]
+[2024-11-06T12:02:50.044+0000] {subprocess.py:93} INFO - [0m12:02:50  13 of 15 OK loaded seed file sales.salesreason ................................. [[32mINSERT 10[0m in 8.48s]
+[2024-11-06T12:02:50.812+0000] {subprocess.py:93} INFO - [0m12:02:50  6 of 15 OK loaded seed file person.person ...................................... [[32mINSERT 2057[0m in 21.06s]
+[2024-11-06T12:02:51.011+0000] {subprocess.py:93} INFO - [0m12:02:51  14 of 15 OK loaded seed file person.stateprovince .............................. [[32mINSERT 181[0m in 9.20s]
+[2024-11-06T12:02:51.512+0000] {subprocess.py:93} INFO - [0m12:02:51  15 of 15 OK loaded seed file sales.store ....................................... [[32mINSERT 701[0m in 9.15s]
+[2024-11-06T12:02:58.509+0000] {subprocess.py:93} INFO - [0m12:02:58  11 of 15 OK loaded seed file sales.salesorderheader ............................ [[32mINSERT 1566[0m in 28.85s]
+[2024-11-06T12:03:04.130+0000] {subprocess.py:93} INFO - [0m12:03:04  10 of 15 OK loaded seed file sales.salesorderdetail ............................ [[32mINSERT 5716[0m in 34.44s]
+[2024-11-06T12:03:11.665+0000] {subprocess.py:93} INFO - [0m12:03:11  4 of 15 OK loaded seed file sales.customer ..................................... [[32mINSERT 19820[0m in 42.01s]
+[2024-11-06T12:03:16.745+0000] {subprocess.py:93} INFO - [0m12:03:16  3 of 15 OK loaded seed file sales.creditcard ................................... [[32mINSERT 19118[0m in 47.10s]
+[2024-11-06T12:03:16.822+0000] {subprocess.py:93} INFO - [0m12:03:16
+[2024-11-06T12:03:16.826+0000] {subprocess.py:93} INFO - [0m12:03:16  Finished running 15 seeds in 0 hours 0 minutes and 47.46 seconds (47.46s).
+[2024-11-06T12:03:17.196+0000] {subprocess.py:93} INFO - [0m12:03:17
+[2024-11-06T12:03:17.199+0000] {subprocess.py:93} INFO - [0m12:03:17  [32mCompleted successfully[0m
+[2024-11-06T12:03:17.202+0000] {subprocess.py:93} INFO - [0m12:03:17
+[2024-11-06T12:03:17.214+0000] {subprocess.py:93} INFO - [0m12:03:17  Done. PASS=15 WARN=0 ERROR=0 SKIP=0 TOTAL=15
+[2024-11-06T12:03:18.594+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T12:03:18.650+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T12:03:18.651+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_with_ge_dag, task_id=dbt_seed, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T120224, end_date=20241106T120318
+[2024-11-06T12:03:18.729+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T12:03:18.772+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T12:03:18.774+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-11-06T12:07:58.086+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T12:07:58.107+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:07:58.119+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:07:58.119+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T12:07:58.136+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_seed> on 2024-11-05 00:00:00+00:00
+[2024-11-06T12:07:58.142+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2044) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T12:07:58.144+0000] {standard_task_runner.py:72} INFO - Started process 2045 to run task
+[2024-11-06T12:07:58.144+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_with_ge_dag', 'dbt_seed', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '175', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmpi4i1_0ee']
+[2024-11-06T12:07:58.145+0000] {standard_task_runner.py:105} INFO - Job 175: Subtask dbt_seed
+[2024-11-06T12:07:58.198+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T12:07:58.290+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_with_ge_dag' AIRFLOW_CTX_TASK_ID='dbt_seed' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T12:07:58.291+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T12:07:58.310+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T12:07:58.311+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt seed']
+[2024-11-06T12:07:58.323+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T12:08:01.333+0000] {subprocess.py:93} INFO - [0m12:08:01  Running with dbt=1.8.2
+[2024-11-06T12:08:01.720+0000] {subprocess.py:93} INFO - [0m12:08:01  Registered adapter: postgres=1.8.2
+[2024-11-06T12:08:02.231+0000] {subprocess.py:93} INFO - [0m12:08:02  Found 8 models, 15 seeds, 42 data tests, 541 macros
+[2024-11-06T12:08:02.236+0000] {subprocess.py:93} INFO - [0m12:08:02
+[2024-11-06T12:08:02.521+0000] {subprocess.py:93} INFO - [0m12:08:02  Concurrency: 12 threads (target='postgres')
+[2024-11-06T12:08:02.523+0000] {subprocess.py:93} INFO - [0m12:08:02
+[2024-11-06T12:08:02.542+0000] {subprocess.py:93} INFO - [0m12:08:02  1 of 15 START seed file person.address ......................................... [RUN]
+[2024-11-06T12:08:02.544+0000] {subprocess.py:93} INFO - [0m12:08:02  2 of 15 START seed file person.countryregion ................................... [RUN]
+[2024-11-06T12:08:02.553+0000] {subprocess.py:93} INFO - [0m12:08:02  3 of 15 START seed file sales.creditcard ....................................... [RUN]
+[2024-11-06T12:08:02.557+0000] {subprocess.py:93} INFO - [0m12:08:02  4 of 15 START seed file sales.customer ......................................... [RUN]
+[2024-11-06T12:08:02.558+0000] {subprocess.py:93} INFO - [0m12:08:02  5 of 15 START seed file date.date .............................................. [RUN]
+[2024-11-06T12:08:02.563+0000] {subprocess.py:93} INFO - [0m12:08:02  6 of 15 START seed file person.person .......................................... [RUN]
+[2024-11-06T12:08:02.564+0000] {subprocess.py:93} INFO - [0m12:08:02  7 of 15 START seed file production.product ..................................... [RUN]
+[2024-11-06T12:08:02.566+0000] {subprocess.py:93} INFO - [0m12:08:02  8 of 15 START seed file production.productcategory ............................. [RUN]
+[2024-11-06T12:08:02.568+0000] {subprocess.py:93} INFO - [0m12:08:02  9 of 15 START seed file production.productsubcategory .......................... [RUN]
+[2024-11-06T12:08:02.570+0000] {subprocess.py:93} INFO - [0m12:08:02  10 of 15 START seed file sales.salesorderdetail ................................ [RUN]
+[2024-11-06T12:08:02.571+0000] {subprocess.py:93} INFO - [0m12:08:02  11 of 15 START seed file sales.salesorderheader ................................ [RUN]
+[2024-11-06T12:08:02.572+0000] {subprocess.py:93} INFO - [0m12:08:02  12 of 15 START seed file sales.salesorderheadersalesreason ..................... [RUN]
+[2024-11-06T12:08:07.894+0000] {subprocess.py:93} INFO - [0m12:08:07  2 of 15 OK loaded seed file person.countryregion ............................... [[32mINSERT 238[0m in 5.03s]
+[2024-11-06T12:08:09.705+0000] {subprocess.py:93} INFO - [0m12:08:09  13 of 15 START seed file sales.salesreason ..................................... [RUN]
+[2024-11-06T12:08:10.309+0000] {subprocess.py:93} INFO - [0m12:08:10  9 of 15 OK loaded seed file production.productsubcategory ...................... [[32mINSERT 37[0m in 6.97s]
+[2024-11-06T12:08:10.570+0000] {subprocess.py:93} INFO - [0m12:08:10  8 of 15 OK loaded seed file production.productcategory ......................... [[32mINSERT 4[0m in 7.64s]
+[2024-11-06T12:08:11.552+0000] {subprocess.py:93} INFO - [0m12:08:11  15 of 15 START seed file sales.store ........................................... [RUN]
+[2024-11-06T12:08:12.099+0000] {subprocess.py:93} INFO - [0m12:08:12  14 of 15 START seed file person.stateprovince .................................. [RUN]
+[2024-11-06T12:08:16.534+0000] {subprocess.py:93} INFO - [0m12:08:16  12 of 15 OK loaded seed file sales.salesorderheadersalesreason ................. [[32mINSERT 1710[0m in 13.22s]
+[2024-11-06T12:08:17.651+0000] {subprocess.py:93} INFO - [0m12:08:17  5 of 15 OK loaded seed file date.date .......................................... [[32mINSERT 731[0m in 14.31s]
+[2024-11-06T12:08:20.702+0000] {subprocess.py:93} INFO - [0m12:08:20  7 of 15 OK loaded seed file production.product ................................. [[32mINSERT 504[0m in 17.53s]
+[2024-11-06T12:08:22.173+0000] {subprocess.py:93} INFO - [0m12:08:22  1 of 15 OK loaded seed file person.address ..................................... [[32mINSERT 1675[0m in 18.84s]
+[2024-11-06T12:08:22.779+0000] {subprocess.py:93} INFO - [0m12:08:22  13 of 15 OK loaded seed file sales.salesreason ................................. [[32mINSERT 10[0m in 11.87s]
+[2024-11-06T12:08:24.403+0000] {subprocess.py:93} INFO - [0m12:08:24  14 of 15 OK loaded seed file person.stateprovince .............................. [[32mINSERT 181[0m in 11.69s]
+[2024-11-06T12:08:24.615+0000] {subprocess.py:93} INFO - [0m12:08:24  15 of 15 OK loaded seed file sales.store ....................................... [[32mINSERT 701[0m in 12.13s]
+[2024-11-06T12:08:25.192+0000] {subprocess.py:93} INFO - [0m12:08:25  6 of 15 OK loaded seed file person.person ...................................... [[32mINSERT 2057[0m in 22.59s]
+[2024-11-06T12:08:28.460+0000] {subprocess.py:93} INFO - [0m12:08:28  11 of 15 OK loaded seed file sales.salesorderheader ............................ [[32mINSERT 1566[0m in 25.80s]
+[2024-11-06T12:08:34.167+0000] {subprocess.py:93} INFO - [0m12:08:34  10 of 15 OK loaded seed file sales.salesorderdetail ............................ [[32mINSERT 5716[0m in 31.50s]
+[2024-11-06T12:08:41.372+0000] {subprocess.py:93} INFO - [0m12:08:41  4 of 15 OK loaded seed file sales.customer ..................................... [[32mINSERT 19820[0m in 38.80s]
+[2024-11-06T12:08:44.679+0000] {subprocess.py:93} INFO - [0m12:08:44  3 of 15 OK loaded seed file sales.creditcard ................................... [[32mINSERT 19118[0m in 42.11s]
+[2024-11-06T12:08:44.702+0000] {subprocess.py:93} INFO - [0m12:08:44
+[2024-11-06T12:08:44.702+0000] {subprocess.py:93} INFO - [0m12:08:44  Finished running 15 seeds in 0 hours 0 minutes and 42.46 seconds (42.46s).
+[2024-11-06T12:08:44.778+0000] {subprocess.py:93} INFO - [0m12:08:44
+[2024-11-06T12:08:44.779+0000] {subprocess.py:93} INFO - [0m12:08:44  [32mCompleted successfully[0m
+[2024-11-06T12:08:44.780+0000] {subprocess.py:93} INFO - [0m12:08:44
+[2024-11-06T12:08:44.781+0000] {subprocess.py:93} INFO - [0m12:08:44  Done. PASS=15 WARN=0 ERROR=0 SKIP=0 TOTAL=15
+[2024-11-06T12:08:46.224+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T12:08:46.258+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T12:08:46.259+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_with_ge_dag, task_id=dbt_seed, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T120758, end_date=20241106T120846
+[2024-11-06T12:08:46.290+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T12:08:46.332+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T12:08:46.334+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-11-06T12:22:22.562+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T12:22:22.594+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:22:22.619+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:22:22.620+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T12:22:22.658+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_seed> on 2024-11-05 00:00:00+00:00
+[2024-11-06T12:22:22.667+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2329) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T12:22:22.670+0000] {standard_task_runner.py:72} INFO - Started process 2330 to run task
+[2024-11-06T12:22:22.670+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_with_ge_dag', 'dbt_seed', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '181', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmpueylkh6_']
+[2024-11-06T12:22:22.672+0000] {standard_task_runner.py:105} INFO - Job 181: Subtask dbt_seed
+[2024-11-06T12:22:22.758+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T12:22:22.885+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_with_ge_dag' AIRFLOW_CTX_TASK_ID='dbt_seed' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T12:22:22.887+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T12:22:22.905+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T12:22:22.906+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt seed']
+[2024-11-06T12:22:22.917+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T12:22:25.983+0000] {subprocess.py:93} INFO - [0m12:22:25  Running with dbt=1.8.2
+[2024-11-06T12:22:26.340+0000] {subprocess.py:93} INFO - [0m12:22:26  Registered adapter: postgres=1.8.2
+[2024-11-06T12:22:27.014+0000] {subprocess.py:93} INFO - [0m12:22:27  Found 8 models, 15 seeds, 42 data tests, 541 macros
+[2024-11-06T12:22:27.019+0000] {subprocess.py:93} INFO - [0m12:22:27
+[2024-11-06T12:22:27.272+0000] {subprocess.py:93} INFO - [0m12:22:27  Concurrency: 12 threads (target='postgres')
+[2024-11-06T12:22:27.273+0000] {subprocess.py:93} INFO - [0m12:22:27
+[2024-11-06T12:22:27.289+0000] {subprocess.py:93} INFO - [0m12:22:27  1 of 15 START seed file person.address ......................................... [RUN]
+[2024-11-06T12:22:27.291+0000] {subprocess.py:93} INFO - [0m12:22:27  2 of 15 START seed file person.countryregion ................................... [RUN]
+[2024-11-06T12:22:27.293+0000] {subprocess.py:93} INFO - [0m12:22:27  3 of 15 START seed file sales.creditcard ....................................... [RUN]
+[2024-11-06T12:22:27.297+0000] {subprocess.py:93} INFO - [0m12:22:27  4 of 15 START seed file sales.customer ......................................... [RUN]
+[2024-11-06T12:22:27.299+0000] {subprocess.py:93} INFO - [0m12:22:27  5 of 15 START seed file date.date .............................................. [RUN]
+[2024-11-06T12:22:27.302+0000] {subprocess.py:93} INFO - [0m12:22:27  6 of 15 START seed file person.person .......................................... [RUN]
+[2024-11-06T12:22:27.304+0000] {subprocess.py:93} INFO - [0m12:22:27  7 of 15 START seed file production.product ..................................... [RUN]
+[2024-11-06T12:22:27.305+0000] {subprocess.py:93} INFO - [0m12:22:27  8 of 15 START seed file production.productcategory ............................. [RUN]
+[2024-11-06T12:22:27.307+0000] {subprocess.py:93} INFO - [0m12:22:27  9 of 15 START seed file production.productsubcategory .......................... [RUN]
+[2024-11-06T12:22:27.308+0000] {subprocess.py:93} INFO - [0m12:22:27  10 of 15 START seed file sales.salesorderdetail ................................ [RUN]
+[2024-11-06T12:22:27.311+0000] {subprocess.py:93} INFO - [0m12:22:27  11 of 15 START seed file sales.salesorderheader ................................ [RUN]
+[2024-11-06T12:22:27.312+0000] {subprocess.py:93} INFO - [0m12:22:27  12 of 15 START seed file sales.salesorderheadersalesreason ..................... [RUN]
+[2024-11-06T12:22:33.673+0000] {subprocess.py:93} INFO - [0m12:22:33  2 of 15 OK loaded seed file person.countryregion ............................... [[32mINSERT 238[0m in 5.71s]
+[2024-11-06T12:22:34.156+0000] {subprocess.py:93} INFO - [0m12:22:34  9 of 15 OK loaded seed file production.productsubcategory ...................... [[32mINSERT 37[0m in 6.19s]
+[2024-11-06T12:22:34.600+0000] {subprocess.py:93} INFO - [0m12:22:34  8 of 15 OK loaded seed file production.productcategory ......................... [[32mINSERT 4[0m in 6.57s]
+[2024-11-06T12:22:35.288+0000] {subprocess.py:93} INFO - [0m12:22:35  13 of 15 START seed file sales.salesreason ..................................... [RUN]
+[2024-11-06T12:22:35.455+0000] {subprocess.py:93} INFO - [0m12:22:35  14 of 15 START seed file person.stateprovince .................................. [RUN]
+[2024-11-06T12:22:36.064+0000] {subprocess.py:93} INFO - [0m12:22:36  15 of 15 START seed file sales.store ........................................... [RUN]
+[2024-11-06T12:22:40.027+0000] {subprocess.py:93} INFO - [0m12:22:40  12 of 15 OK loaded seed file sales.salesorderheadersalesreason ................. [[32mINSERT 1710[0m in 11.69s]
+[2024-11-06T12:22:40.989+0000] {subprocess.py:93} INFO - [0m12:22:40  5 of 15 OK loaded seed file date.date .......................................... [[32mINSERT 731[0m in 13.06s]
+[2024-11-06T12:22:43.004+0000] {subprocess.py:93} INFO - [0m12:22:43  7 of 15 OK loaded seed file production.product ................................. [[32mINSERT 504[0m in 15.43s]
+[2024-11-06T12:22:43.946+0000] {subprocess.py:93} INFO - [0m12:22:43  1 of 15 OK loaded seed file person.address ..................................... [[32mINSERT 1675[0m in 16.13s]
+[2024-11-06T12:22:44.688+0000] {subprocess.py:93} INFO - [0m12:22:44  13 of 15 OK loaded seed file sales.salesreason ................................. [[32mINSERT 10[0m in 8.56s]
+[2024-11-06T12:22:45.079+0000] {subprocess.py:93} INFO - [0m12:22:45  14 of 15 OK loaded seed file person.stateprovince .............................. [[32mINSERT 181[0m in 8.93s]
+[2024-11-06T12:22:46.020+0000] {subprocess.py:93} INFO - [0m12:22:46  15 of 15 OK loaded seed file sales.store ....................................... [[32mINSERT 701[0m in 9.59s]
+[2024-11-06T12:22:48.073+0000] {subprocess.py:93} INFO - [0m12:22:48  6 of 15 OK loaded seed file person.person ...................................... [[32mINSERT 2057[0m in 20.75s]
+[2024-11-06T12:22:59.066+0000] {subprocess.py:93} INFO - [0m12:22:59  11 of 15 OK loaded seed file sales.salesorderheader ............................ [[32mINSERT 1566[0m in 31.71s]
+[2024-11-06T12:23:06.157+0000] {subprocess.py:93} INFO - [0m12:23:06  10 of 15 OK loaded seed file sales.salesorderdetail ............................ [[32mINSERT 5716[0m in 38.83s]
+[2024-11-06T12:23:14.063+0000] {subprocess.py:93} INFO - [0m12:23:14  4 of 15 OK loaded seed file sales.customer ..................................... [[32mINSERT 19820[0m in 46.75s]
+[2024-11-06T12:23:17.805+0000] {subprocess.py:93} INFO - [0m12:23:17  3 of 15 OK loaded seed file sales.creditcard ................................... [[32mINSERT 19118[0m in 50.50s]
+[2024-11-06T12:23:17.839+0000] {subprocess.py:93} INFO - [0m12:23:17
+[2024-11-06T12:23:17.841+0000] {subprocess.py:93} INFO - [0m12:23:17  Finished running 15 seeds in 0 hours 0 minutes and 50.82 seconds (50.82s).
+[2024-11-06T12:23:17.941+0000] {subprocess.py:93} INFO - [0m12:23:17
+[2024-11-06T12:23:17.942+0000] {subprocess.py:93} INFO - [0m12:23:17  [32mCompleted successfully[0m
+[2024-11-06T12:23:17.943+0000] {subprocess.py:93} INFO - [0m12:23:17
+[2024-11-06T12:23:17.943+0000] {subprocess.py:93} INFO - [0m12:23:17  Done. PASS=15 WARN=0 ERROR=0 SKIP=0 TOTAL=15
+[2024-11-06T12:23:19.236+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T12:23:19.270+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T12:23:19.270+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_with_ge_dag, task_id=dbt_seed, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T122222, end_date=20241106T122319
+[2024-11-06T12:23:19.291+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T12:23:19.325+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T12:23:19.327+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-11-06T12:43:52.090+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T12:43:52.110+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:43:52.121+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T12:43:52.122+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2024-11-06T12:43:52.136+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_seed> on 2024-11-05 00:00:00+00:00
+[2024-11-06T12:43:52.141+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2896) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T12:43:52.143+0000] {standard_task_runner.py:72} INFO - Started process 2897 to run task
+[2024-11-06T12:43:52.143+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_with_ge_dag', 'dbt_seed', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '198', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmpdsvnb86_']
+[2024-11-06T12:43:52.144+0000] {standard_task_runner.py:105} INFO - Job 198: Subtask dbt_seed
+[2024-11-06T12:43:52.191+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_with_ge_dag.dbt_seed scheduled__2024-11-05T00:00:00+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T12:43:52.287+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_with_ge_dag' AIRFLOW_CTX_TASK_ID='dbt_seed' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T12:43:52.289+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T12:43:52.307+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T12:43:52.308+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt seed']
+[2024-11-06T12:43:52.320+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T12:43:55.130+0000] {subprocess.py:93} INFO - [0m12:43:55  Running with dbt=1.8.2
+[2024-11-06T12:43:55.463+0000] {subprocess.py:93} INFO - [0m12:43:55  Registered adapter: postgres=1.8.2
+[2024-11-06T12:43:55.985+0000] {subprocess.py:93} INFO - [0m12:43:55  Found 8 models, 15 seeds, 42 data tests, 541 macros
+[2024-11-06T12:43:55.991+0000] {subprocess.py:93} INFO - [0m12:43:55
+[2024-11-06T12:43:56.230+0000] {subprocess.py:93} INFO - [0m12:43:56  Concurrency: 12 threads (target='postgres')
+[2024-11-06T12:43:56.231+0000] {subprocess.py:93} INFO - [0m12:43:56
+[2024-11-06T12:43:56.247+0000] {subprocess.py:93} INFO - [0m12:43:56  1 of 15 START seed file person.address ......................................... [RUN]
+[2024-11-06T12:43:56.249+0000] {subprocess.py:93} INFO - [0m12:43:56  2 of 15 START seed file person.countryregion ................................... [RUN]
+[2024-11-06T12:43:56.251+0000] {subprocess.py:93} INFO - [0m12:43:56  3 of 15 START seed file sales.creditcard ....................................... [RUN]
+[2024-11-06T12:43:56.256+0000] {subprocess.py:93} INFO - [0m12:43:56  4 of 15 START seed file sales.customer ......................................... [RUN]
+[2024-11-06T12:43:56.257+0000] {subprocess.py:93} INFO - [0m12:43:56  5 of 15 START seed file date.date .............................................. [RUN]
+[2024-11-06T12:43:56.258+0000] {subprocess.py:93} INFO - [0m12:43:56  6 of 15 START seed file person.person .......................................... [RUN]
+[2024-11-06T12:43:56.259+0000] {subprocess.py:93} INFO - [0m12:43:56  7 of 15 START seed file production.product ..................................... [RUN]
+[2024-11-06T12:43:56.261+0000] {subprocess.py:93} INFO - [0m12:43:56  8 of 15 START seed file production.productcategory ............................. [RUN]
+[2024-11-06T12:43:56.262+0000] {subprocess.py:93} INFO - [0m12:43:56  9 of 15 START seed file production.productsubcategory .......................... [RUN]
+[2024-11-06T12:43:56.264+0000] {subprocess.py:93} INFO - [0m12:43:56  10 of 15 START seed file sales.salesorderdetail ................................ [RUN]
+[2024-11-06T12:43:56.265+0000] {subprocess.py:93} INFO - [0m12:43:56  11 of 15 START seed file sales.salesorderheader ................................ [RUN]
+[2024-11-06T12:43:56.265+0000] {subprocess.py:93} INFO - [0m12:43:56  12 of 15 START seed file sales.salesorderheadersalesreason ..................... [RUN]
+[2024-11-06T12:44:02.208+0000] {subprocess.py:93} INFO - [0m12:44:02  8 of 15 OK loaded seed file production.productcategory ......................... [[32mINSERT 4[0m in 5.30s]
+[2024-11-06T12:44:04.217+0000] {subprocess.py:93} INFO - [0m12:44:04  2 of 15 OK loaded seed file person.countryregion ............................... [[32mINSERT 238[0m in 6.74s]
+[2024-11-06T12:44:04.379+0000] {subprocess.py:93} INFO - [0m12:44:04  9 of 15 OK loaded seed file production.productsubcategory ...................... [[32mINSERT 37[0m in 6.81s]
+[2024-11-06T12:44:04.500+0000] {subprocess.py:93} INFO - [0m12:44:04  13 of 15 START seed file sales.salesreason ..................................... [RUN]
+[2024-11-06T12:44:05.480+0000] {subprocess.py:93} INFO - [0m12:44:05  14 of 15 START seed file person.stateprovince .................................. [RUN]
+[2024-11-06T12:44:05.540+0000] {subprocess.py:93} INFO - [0m12:44:05  15 of 15 START seed file sales.store ........................................... [RUN]
+[2024-11-06T12:44:11.108+0000] {subprocess.py:93} INFO - [0m12:44:11  7 of 15 OK loaded seed file production.product ................................. [[32mINSERT 504[0m in 14.21s]
+[2024-11-06T12:44:11.301+0000] {subprocess.py:93} INFO - [0m12:44:11  5 of 15 OK loaded seed file date.date .......................................... [[32mINSERT 731[0m in 15.02s]
+[2024-11-06T12:44:12.070+0000] {subprocess.py:93} INFO - [0m12:44:12  12 of 15 OK loaded seed file sales.salesorderheadersalesreason ................. [[32mINSERT 1710[0m in 14.49s]
+[2024-11-06T12:44:14.342+0000] {subprocess.py:93} INFO - [0m12:44:14  1 of 15 OK loaded seed file person.address ..................................... [[32mINSERT 1675[0m in 18.08s]
+[2024-11-06T12:44:14.752+0000] {subprocess.py:93} INFO - [0m12:44:14  13 of 15 OK loaded seed file sales.salesreason ................................. [[32mINSERT 10[0m in 9.69s]
+[2024-11-06T12:44:17.061+0000] {subprocess.py:93} INFO - [0m12:44:17  14 of 15 OK loaded seed file person.stateprovince .............................. [[32mINSERT 181[0m in 10.99s]
+[2024-11-06T12:44:17.327+0000] {subprocess.py:93} INFO - [0m12:44:17  6 of 15 OK loaded seed file person.person ...................................... [[32mINSERT 2057[0m in 21.04s]
+[2024-11-06T12:44:17.799+0000] {subprocess.py:93} INFO - [0m12:44:17  15 of 15 OK loaded seed file sales.store ....................................... [[32mINSERT 701[0m in 11.50s]
+[2024-11-06T12:44:26.827+0000] {subprocess.py:93} INFO - [0m12:44:26  11 of 15 OK loaded seed file sales.salesorderheader ............................ [[32mINSERT 1566[0m in 30.50s]
+[2024-11-06T12:44:30.730+0000] {subprocess.py:93} INFO - [0m12:44:30  10 of 15 OK loaded seed file sales.salesorderdetail ............................ [[32mINSERT 5716[0m in 34.44s]
+[2024-11-06T12:44:40.363+0000] {subprocess.py:93} INFO - [0m12:44:40  4 of 15 OK loaded seed file sales.customer ..................................... [[32mINSERT 19820[0m in 44.08s]
+[2024-11-06T12:44:45.939+0000] {subprocess.py:93} INFO - [0m12:44:45  3 of 15 OK loaded seed file sales.creditcard ................................... [[32mINSERT 19118[0m in 49.68s]
+[2024-11-06T12:44:45.990+0000] {subprocess.py:93} INFO - [0m12:44:45
+[2024-11-06T12:44:45.991+0000] {subprocess.py:93} INFO - [0m12:44:45  Finished running 15 seeds in 0 hours 0 minutes and 50.00 seconds (50.00s).
+[2024-11-06T12:44:46.104+0000] {subprocess.py:93} INFO - [0m12:44:46
+[2024-11-06T12:44:46.106+0000] {subprocess.py:93} INFO - [0m12:44:46  [32mCompleted successfully[0m
+[2024-11-06T12:44:46.107+0000] {subprocess.py:93} INFO - [0m12:44:46
+[2024-11-06T12:44:46.108+0000] {subprocess.py:93} INFO - [0m12:44:46  Done. PASS=15 WARN=0 ERROR=0 SKIP=0 TOTAL=15
+[2024-11-06T12:44:47.600+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T12:44:47.629+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T12:44:47.630+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_project_with_ge_dag, task_id=dbt_seed, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T124352, end_date=20241106T124447
+[2024-11-06T12:44:47.659+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T12:44:47.689+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T12:44:47.691+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

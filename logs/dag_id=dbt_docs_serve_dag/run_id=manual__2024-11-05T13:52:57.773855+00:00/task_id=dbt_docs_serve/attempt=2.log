@@ -1,0 +1,24 @@
+[2024-11-05T14:10:00.362+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-05T14:10:00.397+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_docs_serve_dag.dbt_docs_serve manual__2024-11-05T13:52:57.773855+00:00 [queued]>
+[2024-11-05T14:10:00.417+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_docs_serve_dag.dbt_docs_serve manual__2024-11-05T13:52:57.773855+00:00 [queued]>
+[2024-11-05T14:10:00.418+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2024-11-05T14:10:00.455+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_docs_serve> on 2024-11-05 13:52:57.773855+00:00
+[2024-11-05T14:10:00.466+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=119) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-05T14:10:00.469+0000] {standard_task_runner.py:72} INFO - Started process 120 to run task
+[2024-11-05T14:10:00.468+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_docs_serve_dag', 'dbt_docs_serve', 'manual__2024-11-05T13:52:57.773855+00:00', '--job-id', '115', '--raw', '--subdir', 'DAGS_FOLDER/dbt_docs_serve_dag.py', '--cfg-path', '/tmp/tmp4qjupty0']
+[2024-11-05T14:10:00.472+0000] {standard_task_runner.py:105} INFO - Job 115: Subtask dbt_docs_serve
+[2024-11-05T14:10:00.573+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_docs_serve_dag.dbt_docs_serve manual__2024-11-05T13:52:57.773855+00:00 [running]> on host 5a8a81906411
+[2024-11-05T14:10:00.742+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_docs_serve_dag' AIRFLOW_CTX_TASK_ID='dbt_docs_serve' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T13:52:57.773855+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-05T13:52:57.773855+00:00'
+[2024-11-05T14:10:00.743+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-05T14:10:00.830+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-05T14:10:00.833+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && nohup dbt docs serve --port 8001 &']
+[2024-11-05T14:10:00.855+0000] {subprocess.py:86} INFO - Output:
+[2024-11-05T14:10:05.629+0000] {subprocess.py:93} INFO - [0m14:10:05  Running with dbt=1.8.2
+[2024-11-05T14:10:06.048+0000] {subprocess.py:93} INFO - Serving docs at 8001
+[2024-11-05T14:10:06.049+0000] {subprocess.py:93} INFO - To access from your browser, navigate to: http://localhost:8001
+[2024-11-05T14:10:06.049+0000] {subprocess.py:93} INFO - 
+[2024-11-05T14:10:06.049+0000] {subprocess.py:93} INFO - 
+[2024-11-05T14:10:06.049+0000] {subprocess.py:93} INFO - 
+[2024-11-05T14:10:06.050+0000] {subprocess.py:93} INFO - Press Ctrl+C to exit.

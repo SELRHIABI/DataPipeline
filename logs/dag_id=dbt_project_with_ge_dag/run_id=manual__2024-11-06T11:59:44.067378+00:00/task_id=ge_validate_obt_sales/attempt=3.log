@@ -1,0 +1,117 @@
+[2024-11-06T12:01:41.780+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T12:01:41.816+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.ge_validate_obt_sales manual__2024-11-06T11:59:44.067378+00:00 [queued]>
+[2024-11-06T12:01:41.831+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_project_with_ge_dag.ge_validate_obt_sales manual__2024-11-06T11:59:44.067378+00:00 [queued]>
+[2024-11-06T12:01:41.831+0000] {taskinstance.py:2865} INFO - Starting attempt 3 of 3
+[2024-11-06T12:01:41.854+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): ge_validate_obt_sales> on 2024-11-06 11:59:44.067378+00:00
+[2024-11-06T12:01:41.864+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1751) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T12:01:41.866+0000] {standard_task_runner.py:72} INFO - Started process 1752 to run task
+[2024-11-06T12:01:41.868+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_project_with_ge_dag', 'ge_validate_obt_sales', 'manual__2024-11-06T11:59:44.067378+00:00', '--job-id', '161', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project_dag.py', '--cfg-path', '/tmp/tmpyq1qih_8']
+[2024-11-06T12:01:41.869+0000] {standard_task_runner.py:105} INFO - Job 161: Subtask ge_validate_obt_sales
+[2024-11-06T12:01:41.934+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_project_with_ge_dag.ge_validate_obt_sales manual__2024-11-06T11:59:44.067378+00:00 [running]> on host 9ecf534049e3
+[2024-11-06T12:01:42.035+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_project_with_ge_dag' AIRFLOW_CTX_TASK_ID='ge_validate_obt_sales' AIRFLOW_CTX_EXECUTION_DATE='2024-11-06T11:59:44.067378+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-06T11:59:44.067378+00:00'
+[2024-11-06T12:01:42.036+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T12:01:42.063+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T12:01:42.064+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && great_expectations checkpoint run obt_sales_checkpoint']
+[2024-11-06T12:01:42.076+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T12:01:50.422+0000] {subprocess.py:93} INFO - Calculating Metrics:   0%|          | 0/69 [00:00<?, ?it/s]Calculating Metrics:   0%|          | 0/69 [00:00<?, ?it/s]Calculating Metrics:   3%|▎         | 2/69 [00:00<00:00, 192.55it/s]Calculating Metrics:   3%|▎         | 2/69 [00:00<00:01, 34.36it/s] Calculating Metrics:   6%|▌         | 4/69 [00:00<00:01, 63.93it/s]Calculating Metrics:   6%|▌         | 4/69 [00:00<00:01, 34.79it/s]Calculating Metrics:   6%|▌         | 4/69 [00:00<00:01, 34.79it/s]Calculating Metrics:  25%|██▍       | 17/69 [00:00<00:01, 34.79it/s]Calculating Metrics:  25%|██▍       | 17/69 [00:00<00:01, 34.79it/s]Calculating Metrics:  83%|████████▎ | 57/69 [00:00<00:00, 254.75it/s]Calculating Metrics:  83%|████████▎ | 57/69 [00:00<00:00, 254.75it/s]Calculating Metrics:  83%|████████▎ | 57/69 [00:00<00:00, 254.75it/s]Calculating Metrics: 100%|██████████| 69/69 [00:00<00:00, 254.75it/s]Calculating Metrics: 100%|██████████| 69/69 [00:00<00:00, 254.75it/s]Calculating Metrics: 100%|██████████| 69/69 [00:00<00:00, 254.75it/s]Calculating Metrics: 100%|██████████| 69/69 [00:00<00:00, 211.91it/s]
+[2024-11-06T12:01:50.505+0000] {subprocess.py:93} INFO - Error running action with name store_validation_result
+[2024-11-06T12:01:50.506+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-11-06T12:01:50.506+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/great_expectations/validation_operators/validation_operators.py", line 476, in _run_actions
+[2024-11-06T12:01:50.507+0000] {subprocess.py:93} INFO -     action_result = self.actions[name].run(
+[2024-11-06T12:01:50.508+0000] {subprocess.py:93} INFO -                     ^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-06T12:01:50.508+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/great_expectations/checkpoint/actions.py", line 101, in run
+[2024-11-06T12:01:50.509+0000] {subprocess.py:93} INFO -     return self._run(
+[2024-11-06T12:01:50.510+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^
+[2024-11-06T12:01:50.510+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/great_expectations/checkpoint/actions.py", line 898, in _run
+[2024-11-06T12:01:50.510+0000] {subprocess.py:93} INFO -     run_return_value = self._basic_run(
+[2024-11-06T12:01:50.510+0000] {subprocess.py:93} INFO -                        ^^^^^^^^^^^^^^^^
+[2024-11-06T12:01:50.511+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/great_expectations/checkpoint/actions.py", line 942, in _basic_run
+[2024-11-06T12:01:50.511+0000] {subprocess.py:93} INFO -     return self.target_store.set(
+[2024-11-06T12:01:50.511+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-06T12:01:50.511+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/store/store.py", line 226, in set
+[2024-11-06T12:01:50.512+0000] {subprocess.py:93} INFO -     return self._store_backend.set(
+[2024-11-06T12:01:50.512+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-06T12:01:50.512+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/store/_store_backend.py", line 134, in set
+[2024-11-06T12:01:50.512+0000] {subprocess.py:93} INFO -     return self._set(key, value, **kwargs)
+[2024-11-06T12:01:50.513+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-06T12:01:50.513+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/store/tuple_store_backend.py", line 329, in _set
+[2024-11-06T12:01:50.513+0000] {subprocess.py:93} INFO -     os.makedirs(str(path), exist_ok=True)  # noqa: PTH103
+[2024-11-06T12:01:50.514+0000] {subprocess.py:93} INFO -     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-06T12:01:50.515+0000] {subprocess.py:93} INFO -   File "<frozen os>", line 215, in makedirs
+[2024-11-06T12:01:50.516+0000] {subprocess.py:93} INFO -   File "<frozen os>", line 225, in makedirs
+[2024-11-06T12:01:50.517+0000] {subprocess.py:93} INFO - PermissionError: [Errno 13] Permission denied: '/opt/dbt/gx/uncommitted/validations/obt_sales/basic/20241106-120149-obt_sales-checkpoint'
+[2024-11-06T12:01:50.517+0000] {subprocess.py:93} INFO - [Errno 13] Permission denied: '/opt/dbt/gx/uncommitted/validations/obt_sales/basic/20241106-120149-obt_sales-checkpoint'
+[2024-11-06T12:01:51.364+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-11-06T12:01:51.377+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-11-06T12:01:51.385+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=dbt_project_with_ge_dag, task_id=ge_validate_obt_sales, run_id=manual__2024-11-06T11:59:44.067378+00:00, execution_date=20241106T115944, start_date=20241106T120141, end_date=20241106T120151
+[2024-11-06T12:01:51.402+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T12:01:51.403+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 161 for task ge_validate_obt_sales (Bash command failed. The command returned a non-zero exit code 1.; 1752)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-11-06T12:01:51.454+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-11-06T12:01:51.478+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T12:01:51.483+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

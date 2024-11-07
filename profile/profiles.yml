@@ -1,0 +1,12 @@
+adventureworks:
+  target: postgres
+  outputs:
+    postgres:  
+      type: postgres
+      host: postgres
+      user: airflow
+      password: airflow
+      port: 5432
+      dbname: dbt_database
+      schema: public
+      threads: 12
